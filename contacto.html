@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
 
@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>IPO-SHOP</title>
+    <title>FANTASTIC SHOP</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -39,7 +39,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">IPO-SHOP</a>
+                <a class="navbar-brand" href="index.html">FANTASTIC SHOP</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -48,13 +48,13 @@
                         <a href="somos.html">¿Quiénes somos?</a>
                     </li>
                     <li>
-                        <a href="servicios.html">Servicios</a>
+                        <a href="testimonios.html">Testimonios</a>
                     </li>
                     <li>
                         <a href="contacto.html">Contacto</a>
                     </li>
                     <li>
-    					<a href="login.html">Login</a>
+                        <a href="login.html">Login</a>
                     </li>
                 </ul>
             </div>
@@ -65,39 +65,55 @@
 
     <!-- Page Content -->
     <div class="container">
-
         <div class="row">
+	    	<div class="col-md-6">
+                <div id="googleMap" style="width:100%; height:100%; position: relative; padding: 30%;"></div>
 
-            <div class="col-md-12">
-				<div class="container">
-				
-				<div class="row" style="margin-top:20px">
-		    	<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-		    		<form role="form">
-		    			<fieldset>
-		    				<h2>Contacta con nosotros</h2>
-		    				<hr>
-		    				<div class="form-group">
-		    				<input type="nombre" name="nombre" id="nombre" class="form-control input-lg" placeholder="Tu nombre">
-		    				</div>
-		    				<div class="form-group">
-		    				<input type="email" name="email" id="email" class="form-control input-lg" placeholder="Dirección email">
-		    				</div>
-		    				<div class="form-group">
-		    					<textarea class="form-control" id="message" name="message" placeholder="¿Qué nos quieres decir?" rows="5"></textarea>
-		    				</div>
-		    				
-		    				<div class="form-group">
-              					<div class="col-md-12 text-right">
-                					<button type="submit" class="btn btn-primary btn-lg">Enviar</button>
-              					</div>
-           					 </div>
-						</fieldset>
-					</form>
-				</div>
+                <script>
+                function myMap() {
+                  var mapCanvas = document.getElementById("googleMap");
+                  var myCenter = new google.maps.LatLng(40.960586, -5.670307); 
+                  var mapOptions = {center: myCenter, zoom: 18};
+                  var map = new google.maps.Map(mapCanvas,mapOptions);
+                  var marker = new google.maps.Marker({
+                    position: myCenter,
+                    animation: google.maps.Animation.BOUNCE
+                  });
+                  marker.setMap(map);
+
+                  var infowindow = new google.maps.InfoWindow({
+                    content: "Encu&#233ntranos aqu&#237!"
+                  });
+                  infowindow.open(map,marker);
+                }
+                </script>
+
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCf1LOHu4m09Fdpoj1CbI2RXFKSAzeUNGA&callback=myMap"></script>
+            </div>
+            <div class="col-md-6"> 
+	    		<form role="form">
+	    			<fieldset>
+	    				<h2>Contacta con nosotros</h2>
+	    				<hr>
+	    				<div class="form-group">
+	    				<input type="nombre" name="nombre" id="nombre" class="form-control input-lg" placeholder="Tu nombre">
+	    				</div>
+	    				<div class="form-group">
+	    				<input type="email" name="email" id="email" class="form-control input-lg" placeholder="Dirección email">
+	    				</div>
+	    				<div class="form-group">
+	    					<textarea class="form-control" id="message" name="message" placeholder="¿Qué nos quieres decir?" rows="5"></textarea>
+	    				</div>
+	    				
+	    				<div class="form-group">
+          					<div class="col-md-12 text-right">
+            					<button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+          					</div>
+       					 </div>
+					</fieldset>
+				</form>
 			</div>
         </div>
-
     </div>
     <!-- /.container -->
 
